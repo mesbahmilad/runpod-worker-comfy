@@ -12,3 +12,6 @@ services:
     runtime: nvidia
     volumes:
       - ./data/comfyui/output:/comfyui/output
+    build:
+      context: .
+      network: host
