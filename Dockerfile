@@ -44,6 +44,30 @@ RUN git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack /comfyui/custom_no
 WORKDIR /comfyui/custom_nodes/ComfyUI-Impact-Pack
 RUN pip3 install -r requirements.txt
 
+RUN git clone https://github.com/LykosAI/ComfyUI-Inference-Core-Nodes.git /comfyui/custom_nodes/ComfyUI-Inference-Core-Nodes
+WORKDIR /comfyui/custom_nodes/ComfyUI-Inference-Core-Nodes
+RUN pip3 install -r requirements.txt
+
+RUN git clone https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git /comfyui/custom_nodes/ComfyUI_Comfyroll_CustomNodes
+WORKDIR /comfyui/custom_nodes/ComfyUI_Comfyroll_CustomNodes
+RUN pip3 install -r requirements.txt
+
+RUN git clone https://github.com/cubiq/ComfyUI_IPAdapter_plus.git /comfyui/custom_nodes/ComfyUI_IPAdapter_plus
+WORKDIR /comfyui/custom_nodes/ComfyUI_IPAdapter_plus
+RUN pip3 install -r requirements.txt
+
+RUN git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale /comfyui/custom_nodes/ComfyUI_UltimateSDUpscale
+WORKDIR /comfyui/custom_nodes/ComfyUI_UltimateSDUpscale
+RUN pip3 install -r requirements.txt
+
+RUN git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git /comfyui/custom_nodes/comfyui_controlnet_aux
+WORKDIR /comfyui/custom_nodes/comfyui_controlnet_aux
+RUN pip3 install -r requirements.txt
+
+RUN git clone https://github.com/jags111/efficiency-nodes-comfyui.git /comfyui/custom_nodes/efficiency-nodes-comfyui
+WORKDIR /comfyui/custom_nodes/efficiency-nodes-comfyui
+RUN pip3 install -r requirements.txt
+
 # Go back to the root
 WORKDIR /
 
