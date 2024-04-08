@@ -25,16 +25,21 @@ RUN git clone https://github.com/comfyanonymous/ComfyUI.git /comfyui
 WORKDIR /comfyui
 
 # Install ComfyUI dependencies
-RUN pip3 install --no-cache-dir --timeout=1000 torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-RUN pip3 install --no-cache-dir xformers==0.0.21
-RUN pip3 install --no-cache-dir --timeout=1000 -r requirements.txt
+RUN pip3 install --no-cache-dir --timeout=1000 torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 --quiet
+RUN pip3 install --no-cache-dir xformers==0.0.21 --quiet
+RUN pip3 install --no-cache-dir --timeout=1000 -r requirements.txt --quiet
+
+# Install custom nodes
+RUN git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack /comfyui/custom_nodes/ComfyUI-Impact-Pack
+WORKDIR /comfyui/custom_nodes/ComfyUI-Impact-Pack
+RUN pip3 install -r requirements.txt
 
 # Install runpod
-RUN pip3 install runpod requests
+RUN pip3 install runpod requests --quiet
 
 # Download checkpoints/vae/LoRA to include in image
-RUN wget -O models/checkpoints/sd_xl_base_1.0.safetensors https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors
-RUN wget -O models/vae/sdxl_vae.safetensors https://huggingface.co/stabilityai/sdxl-vae/resolve/main/sdxl_vae.safetensors
+RUN wget -q -O models/checkpoints/sd_xl_base_1.0.safetensors https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors
+RUN wget -q -O models/vae/sdxl_vae.safetensors https://huggingface.co/stabilityai/sdxl-vae/resolve/main/sdxl_vae.safetensors
 
 # Example for adding specific models into image
 #ADD models/checkpoints/realvisxlV40_v40Bakedvae.safetensors models/checkpoints/
