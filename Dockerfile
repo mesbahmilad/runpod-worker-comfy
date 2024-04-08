@@ -46,7 +46,7 @@ RUN pip3 install -r requirements.txt
 
 RUN git clone https://github.com/LykosAI/ComfyUI-Inference-Core-Nodes.git /comfyui/custom_nodes/ComfyUI-Inference-Core-Nodes
 WORKDIR /comfyui/custom_nodes/ComfyUI-Inference-Core-Nodes
-RUN pip3 install -r requirements.txt
+RUN python3 install.py
 
 RUN git clone https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git /comfyui/custom_nodes/ComfyUI_Comfyroll_CustomNodes
 WORKDIR /comfyui/custom_nodes/ComfyUI_Comfyroll_CustomNodes
