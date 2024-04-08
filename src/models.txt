@@ -1,0 +1,6 @@
+https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors models/clip_vision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
+https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/image_encoder/model.safetensors models/clip_vision/CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors
+https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/diffusers_xl_canny_full.safetensors models/controlnet/diffusers_xl_canny_full.safetensors
+https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/diffusers_xl_depth_full.safetensors models/controlnet/diffusers_xl_depth_full.safetensors
+https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors models/ipadapter/ip-adapter-plus_sdxl_vit-h.safetensors
+https://civitai.com/api/download/models/344487 models/checkpoints/RealVisXL_V4.safetensors

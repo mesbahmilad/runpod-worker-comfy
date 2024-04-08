@@ -32,12 +32,12 @@ RUN pip3 install --no-cache-dir --timeout=1000 -r requirements.txt --quiet
 # Install runpod
 RUN pip3 install runpod requests --quiet
 
-# Download checkpoints/vae/LoRA to include in image
-RUN wget -O models/checkpoints/sd_xl_base_1.0.safetensors https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors
-RUN wget -O models/vae/sdxl_vae.safetensors https://huggingface.co/stabilityai/sdxl-vae/resolve/main/sdxl_vae.safetensors
+#Download Models
+COPY src/download_models.sh /scripts/download_models.sh
+COPY src/models.txt /scripts/models.txt
 
-# Example for adding specific models into image
-#ADD models/checkpoints/realvisxlV40_v40Bakedvae.safetensors models/checkpoints/
+RUN chmod +x /scripts/download_models.sh
+RUN bash /scripts/download_models.sh /scripts/models.txt
 
 # Install custom nodes
 RUN git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack /comfyui/custom_nodes/ComfyUI-Impact-Pack
