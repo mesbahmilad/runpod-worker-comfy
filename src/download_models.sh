@@ -8,5 +8,5 @@ while IFS= read -r line; do
   # Create the directory if it doesn't exist
   mkdir -p "$dir"
 
-  wget -O "/comfyui/$file" "$url"
+  wget -q -O "/comfyui/$file" "$url"
 done < "$1"
