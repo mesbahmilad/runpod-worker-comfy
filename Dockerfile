@@ -10,15 +10,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3.10 python3-pip git wget \
     && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
-# Clone ComfyUI repository
-RUN git clone https://github.com/comfyanonymous/ComfyUI.git /comfyui
-
-# Change working directory to ComfyUI
-
 # Install ComfyUI dependencies
 RUN pip3 install --no-cache-dir --quiet torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 \
-    xformers==0.0.21\
-    runpod requests
+    && pip3 install --no-cache-dir xformers==0.0.21 \
+    && pip3 install runpod requests
+
+# Clone ComfyUI repository
+RUN git clone https://github.com/comfyanonymous/ComfyUI.git /comfyui
 
 WORKDIR /comfyui
 
