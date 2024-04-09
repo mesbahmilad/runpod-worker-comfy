@@ -1,6 +1,16 @@
 version: 0.2
 
 phases:
+  install:
+    commands:
+      # Install Docker Slim
+      - echo Installing Docker Slim...
+      - curl -L -o ds.tar.gz https://github.com/slimtoolkit/slim/releases/download/1.40.11/dist_linux.tar.gz
+      - tar xvzf ds.tar.gz
+      - mv  dist_linux/slim /usr/local/bin/
+      - mv  dist_linux/slim-sensor /usr/local/bin/
+      - slim --version
+
   pre_build:
     commands:
       - echo Logging in to Docker Hub...
