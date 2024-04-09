@@ -17,8 +17,8 @@ RUN git clone https://github.com/comfyanonymous/ComfyUI.git /comfyui
 WORKDIR /comfyui
 
 # Install ComfyUI dependencies
-RUN pip3 install --no-cache-dir --timeout=1000 -r requirements.txt --quiet && \
-    pip3 install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 runpod requests --quiet
+RUN pip3 install --no-cache-dir --timeout=1000 torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 --quiet
+RUN pip3 install --no-cache-dir xformers==0.0.21 --quiet
 RUN pip3 install --no-cache-dir --timeout=1000 -r requirements.txt --quiet
 
 # Install runpod
