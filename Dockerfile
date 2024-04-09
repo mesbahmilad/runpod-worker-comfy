@@ -36,11 +36,12 @@ RUN git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack /comfyui/custom_no
     git clone https://github.com/LykosAI/ComfyUI-Inference-Core-Nodes.git /comfyui/custom_nodes/ComfyUI-Inference-Core-Nodes && \
     git clone https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git /comfyui/custom_nodes/ComfyUI_Comfyroll_CustomNodes && \
     git clone https://github.com/cubiq/ComfyUI_IPAdapter_plus.git /comfyui/custom_nodes/ComfyUI_IPAdapter_plus && \
-    git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale /comfyui/custom_nodes/ComfyUI_UltimateSDUpscale && \
+    git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale /comfyui/custom_nodes/ComfyUI_UltimateSDUpscale --recursive && \
     git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git /comfyui/custom_nodes/comfyui_controlnet_aux && \
     git clone https://github.com/jags111/efficiency-nodes-comfyui.git /comfyui/custom_nodes/efficiency-nodes-comfyui
 
-RUN python3 custom_nodes/ComfyUI-Inference-Core-Nodes/install.py && \
+RUN python3 custom_nodes/ComfyUI-Impact-Pack/install.py && \
+    python3 custom_nodes/ComfyUI-Inference-Core-Nodes/install.py && \
     pip3 install -r custom_nodes/comfyui_controlnet_aux/requirements.txt && \
     pip3 install -r custom_nodes/efficiency-nodes-comfyui/requirements.txt
 
