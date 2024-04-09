@@ -8,6 +8,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 # Install Python, git and other necessary tools
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3.10 python3-pip git wget \
+    libgl1-mesa-glx \
     && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 # Install ComfyUI dependencies
