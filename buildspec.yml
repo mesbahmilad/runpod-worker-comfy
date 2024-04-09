@@ -27,5 +27,5 @@ phases:
       - echo Slimming the Docker image...
       - slim build --http-probe=false $DOCKERHUB_USERNAME/$DOCKER_REPO
       - echo Pushing the Docker image...
-      - docker push $DOCKERHUB_USERNAME/$DOCKER_REPO
+      - docker push $DOCKERHUB_USERNAME/$DOCKER_REPO.slim
       - echo Docker image pushed to Docker Hub
