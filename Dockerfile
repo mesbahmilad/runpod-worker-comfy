@@ -50,15 +50,12 @@ RUN python3 install.py
 
 RUN git clone https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git /comfyui/custom_nodes/ComfyUI_Comfyroll_CustomNodes
 WORKDIR /comfyui/custom_nodes/ComfyUI_Comfyroll_CustomNodes
-RUN pip3 install -r requirements.txt
 
 RUN git clone https://github.com/cubiq/ComfyUI_IPAdapter_plus.git /comfyui/custom_nodes/ComfyUI_IPAdapter_plus
 WORKDIR /comfyui/custom_nodes/ComfyUI_IPAdapter_plus
-RUN pip3 install -r requirements.txt
 
 RUN git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale /comfyui/custom_nodes/ComfyUI_UltimateSDUpscale
 WORKDIR /comfyui/custom_nodes/ComfyUI_UltimateSDUpscale
-RUN pip3 install -r requirements.txt
 
 RUN git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git /comfyui/custom_nodes/comfyui_controlnet_aux
 WORKDIR /comfyui/custom_nodes/comfyui_controlnet_aux
